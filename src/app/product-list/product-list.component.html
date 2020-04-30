@@ -1,8 +1,33 @@
-<h2>Products</h2>
-
-
 <!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
+*ngFor
+*ngIf
+Interpolation {{ }}
+Property binding [ ]
+Event binding ( ) 
 -->
+
+
+<h1>Danh sách sản phẩm:</h1>
+
+<div *ngFor="let product of products">
+	<h3>
+		<a [title]="'xem chi tiết ' + product.name ">
+			{{[product.name]}}
+		</a>
+	</h3>
+
+	<p *ngIf="product.description">
+		Chi tiết sản phẩm: {{ product.description }}
+	</p>
+	<h5> Giá: {{[product.price]}}
+	</h5>
+	<button (click)="share()">
+    Share sản phẩm cho bạn bè
+  </button>
+<app-product-alerts
+  [product]="product"
+  (notify)="onNotify()"
+  >
+  
+</app-product-alerts>
+</div>

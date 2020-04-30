@@ -11,8 +11,11 @@ export class ProductListComponent {
   products = products;
 
   share() {
-    window.alert('The product has been shared!');
+    window.alert('Sản phẩm đã được chia sẻ!');
   }
+  onNotify(){
+    window.alert('bạn sẽ được thông báo khi sản phẩm này giảm giá!');
+  };
 }
 
 
