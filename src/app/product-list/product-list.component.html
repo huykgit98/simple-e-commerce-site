@@ -9,9 +9,9 @@ Event binding ( )
 
 <h1>Danh sách sản phẩm:</h1>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
 	<h3>
-		<a [title]="'xem chi tiết ' + product.name ">
+		<a [title]="'xem chi tiết ' + product.name" [routerLink]="['/products', productId]">
 			{{[product.name]}}
 		</a>
 	</h3>
